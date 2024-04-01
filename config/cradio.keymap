@@ -6,8 +6,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &hm_shift_l LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &hm_shift_r RSHFT k4
 
 / {
     behaviors {
@@ -19,6 +19,34 @@
             quick-tap-ms = <75>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
+        };
+
+        hm_shift_l: hm_shift_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            // hold-trigger-on-release;
+        };
+
+        hm_shift_r: hm_shift_r {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            // hold-trigger-on-release;
         };
     };
 

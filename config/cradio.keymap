@@ -24,6 +24,22 @@
 
    };
 
+
+    &sk {  // sticky-key config
+        release-after-ms = <900>;  // release after 0.6s
+        quick-release;             // no double capitalization when rolling keys
+    };
+
+    &sl {  // sticky-layer config
+        ignore-modifiers;          // allow chording sticky mods & layers
+    };
+
+    &lt {  // layer-tap config
+        flavor = "balanced";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <QUICK_TAP_MS>;
+    };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -55,10 +71,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ DELETE   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  ;       │
-            &kp DEL    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp SEMI
+            &kp TAB    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  :       │
-            &sk LSHIT &kp N4     &kp N5     &kp N6     &trans         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp COLON
+            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp COLON
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
            &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans

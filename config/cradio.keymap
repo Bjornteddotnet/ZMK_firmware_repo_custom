@@ -48,7 +48,7 @@
             &kp A   &ht S LALT  &ht D LCTRL &ht F LGUI     &kp G      &kp H      &ht J RGUI        &ht K R_CTRL         &ht L RALT  &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &mt MOD_LSFT Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &mt MOD_RSFT FLSH 
+            &mt LEFT_SHIFT Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &mt LEFT_SHIFT FLSH 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
 &mt MOD_LSFT A

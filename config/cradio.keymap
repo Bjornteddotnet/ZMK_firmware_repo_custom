@@ -21,10 +21,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-    &mt {
-        tapping-term-ms = <300>;
-    };
-
    };
 
     conditional_layers {

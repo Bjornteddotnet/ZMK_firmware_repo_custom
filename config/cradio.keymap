@@ -9,6 +9,10 @@
 #define HRML(k2,k3,k4) &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  
 
+&mt {
+    tapping-term-ms = <201>;
+ };
+
 / {
     behaviors {
         ht: hold_tap {
@@ -21,6 +25,7 @@
             bindings = <&kp>, <&kp>;
         };
 
+
    };
 
     conditional_layers {
@@ -30,11 +35,6 @@
             then-layer = <3>;
         };
     };
-
-
-
-            // &mt LSHIFT Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &mt LSHIFT FLSH 
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -48,9 +48,10 @@
             &kp A   &ht S LALT  &ht D LCTRL &ht F LGUI     &kp G      &kp H      &ht J RGUI        &ht K R_CTRL         &ht L RALT  &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FLSH 
+            &mt MOD_LSFT Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &mt MOD_RSFT FLSH 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+&mt MOD_LSFT A
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
